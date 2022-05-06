@@ -32,7 +32,7 @@ int main() {
 
 			index--;
             // Pega o valor correpondente a rua que esta no meio que é a melhor localizada
-			int mid = index & 1 ? (num[index / 2] + num[index / 2 + 1]) / 2 : num[index / 2];
+			int mid = index % 2 == 1 ? (num[index / 2] + num[index / 2 + 1]) / 2 : num[index / 2];
 			
 			int i, sum = 0;
             // Soma as distancias
