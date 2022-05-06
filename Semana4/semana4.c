@@ -9,6 +9,7 @@ void insertionSort(int n, int index) {
 	int i;
 	for (i = index; i && n < num[i - 1]; i--)
 		num[i] = num[i - 1];
+	
 	num[i] = n;
 }
 
