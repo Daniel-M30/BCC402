@@ -1,18 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Nome do problema: 10196 - Check the Check
+// Problema em questão: https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&problem=1137
+
+/**
+ * Neste problema foi proposto a ideia de verificar, a partir de uma entrada de dados, se o jogo possui algum dos reis em check ou se
+ * não possui nenhum deles em check. Deste modo, verificamos para cada uma das peças presentes no tabuleiro se alguma delas deixa o
+ * rei adversario em check ou não
+ */
+
+// Definição das constantes relacionadas as dimensões do tabuleiro
 #define T_Y 8
 #define T_X 8
 
-// Verifica as retas
+// Verifica as retas, retorna 1 caso o rei seja encontrado e 0 caso contrario
 int handleStraight(char** board, int x, int y, char target1, char target2) {
     if(x - 1 >= 0 && y - 1 >= 0 && x + 1 < T_X && y + 1 < T_Y) {
+        // Verifica se nas retas imediatas o rei se encontra presente
         if ((board[y][x - 1] == target1 || board[y][x - 1] == target2) || (board[y][x + 1] == target1 || board[y][x + 1] == target2) || 
             (board[y - 1][x] == target1 || board[y - 1][x] == target2) || (board[y + 1][x] == target1 || board[y + 1][x] == target2))
             return 1;
 
         int xc, yc;
-        for (xc = -1; xc + x - 1 >= 0 && board[y][xc + x] == '.'; xc--)
+        // Verifica se nas retas subsequentes se o rei se encontra presente, isso acontece nos 4 loops seguintes
+        for (xc = -1; xc + x - 1 >= 0 && board[y][xc + x] == '.'; xc--) 
             if (board[y][xc + x - 1] == target1 || board[y][xc + x - 1] == target2)
                 return 1;
         
@@ -32,10 +44,14 @@ int handleStraight(char** board, int x, int y, char target1, char target2) {
     return 0;
 }
 
-// Verifica a diagonal
+// Verifica a diagonal, retorna 1 caso o rei seja encontrado e o caso contrario
 int handleDiagonal(char** board, int x, int y, char target1, char target2) {
     int upLeft = 1, upRight = 1, downLeft = 1, downRight = 1;
     
+    /**
+     * O loop a seguir garante a verificação de todos os possiveis lugares nas diagonais, de todas as direções, caso em alguma
+     * delas nao seja encontrado um quadrado vazio, ele seta o campo para falso ate que todos os lados sejam verificados
+     */
     for (int c = 1; upLeft || upRight || downLeft || downRight; c++) {
         if (upLeft) {
             if (x - c >= 0 && y - c >= 0) {                
@@ -93,7 +109,12 @@ int handleDiagonal(char** board, int x, int y, char target1, char target2) {
     return 0;
 }
 
+// Os campos em que o cavalo possa atacar, retorna 1 caso o rei seja encontrado e o caso contrario
 int handleKnight(char** board, int x, int y, char target) {
+    /**
+     * Realiza a verificação de todos os lados que o rei pode atingir, justamente por isso existem varios if's
+     * cada um deles verifica os possiveis lugares que o rei pode ir
+     */
     if (x - 2 >= 0) {
         if (y - 1 >= 0 && board[y - 1][x - 2] == target)
             return 1;
@@ -129,7 +150,9 @@ int handleKnight(char** board, int x, int y, char target) {
     return 0;
 }
 
+// Os campos em que o peão possa atacar, retorna 1 caso o rei seja encontrado e o caso contrario
 int handlePawn(char** board, int x, int y, char target, int yChange) {
+    // Verifica os dois possiveis lugares que um peão pode atacar
     if (y + yChange < T_Y && y + yChange >= 0) {
         if (x - 1 >= 0 && board[y + yChange][x - 1] == target)
             return 1;

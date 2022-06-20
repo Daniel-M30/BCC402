@@ -2,6 +2,15 @@
 #include<string.h>
 #include<stdlib.h>
 
+// Nome do problema: 850 - Crypt Kicker II
+// Problema em questão: 
+
+/**
+ * Neste problema é abordado sobre o tema de criptografia, deste modo, é nos dado um problema que a partir de uma sequencia de frases
+ * devemos apresentar sua decodificação correspondente, mas apenas nos casos em que possuam o padrão da chave presente no meio das
+ * frases inseridas inicialmente, no final apresentamos as frases decodificadas, caso seja possivel
+ */
+
 char str[1000][200]; 
 char ch[50]={"the quick brown fox jumps over the lazy dog"};
 char encode[27];

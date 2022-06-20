@@ -1,6 +1,14 @@
-/* @JUDGE ID:1275459 100 C “The 3n + 1 problem” */
-/* @BEGIN OF SOURCE CODE */
 #include <stdio.h>
+
+// Nome do problema: 100 - The 3n + 1 problem
+// Problema em questão: 
+
+/**
+ * Neste problema é nos apresentado um problema considerando numeros pares e impares que segue as seguintes regras, caso o numero em questao
+ * seja um numero par, devemos dividir esse numero por 2, mas caso seja um numero impar, devemos multiplicar esse numero por 3 e somar com 1,
+ * este procedimento é repetido ate que o numero fique igual a um
+ * Nosso objetivo nesse programa é verificar quantas etapas são necessarias nesse algoritmo para que o numero fique igual a uma
+ */
 
 int main() {
     int i, j, maior, menor;
@@ -44,4 +52,3 @@ int main() {
 
     return 0;
 }
-/* @END OF SOURCE CODE */
