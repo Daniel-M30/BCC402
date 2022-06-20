@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Nome do problema: 100 - The 3n + 1 problem
-// Problema em questão: 
+// Problema em questão: https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&problem=36
 
 /**
  * Neste problema é nos apresentado um problema considerando numeros pares e impares que segue as seguintes regras, caso o numero em questao
@@ -47,7 +47,7 @@ int main() {
                 max = qtd;
         }
 
-        printf("%d %d %d\n", menor, maior, max);
+        printf("%d %d %d\n", i, j, max);
     }
 
     return 0;

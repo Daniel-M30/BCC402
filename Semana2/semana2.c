@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 // Nome do problema: 10038 - Jolly Jumpers
-// Problema em questão: 
+// Problema em questão: https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&category=12&page=show_problem&problem=979
 
 /**
  * Neste problema é apresentado para nós o termo Jolly, que no caso corresponde quando uma sequencia de numeros fazem co-relação direta

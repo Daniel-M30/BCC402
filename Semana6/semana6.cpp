@@ -17,6 +17,20 @@
 #include <iostream>
 #include <algorithm>
 
+// Nome do problema: 10150 - Doublets
+// Problema em questão: https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&problem=1091
+
+/**
+ * Neste problema temos a apresentação do termo doublets, que é usada para casos onde o a partir de uma palavra, trocamos de uma a uma letra
+ * dela até atingir uma outra palavra determinada por nós, mas nessas trocas de letras, as palavras geradas pela troca tambem devem fazer
+ * parte do conjunto de palavras que temos de passar no inicio da execução do programa.
+ * Nosso objetivo é realizar essa troca de letras para atingir a palavra chave com o menor numero de trocas possiveis, isso para o caso de
+ * ser possivel encontrar um doublets a partir de duas palavras
+ * 
+ * Observação: Esse codigo não é de autoria minha, ele foi encontrado no seguinte site:
+ * URL: https://github.com/shahidul2k9/problem-solution/blob/master/uva%20online%20judge/10150%20-%20Doublets.cpp
+ */
+
 using namespace std;
 
 #define FOR(i, L, U) for(int i=(int)L; i<=(int)U; i++)
